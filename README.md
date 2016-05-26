@@ -17,9 +17,9 @@ Repositório para compartilhamento de aprendizado de docker
 Seja bem vindo ao repositório, a intenção é o compartilhamento de conteúdo do básico ao avançado de Docker, fique a vontade para contribuir para o repositório na seção de [Contribuição](link_de_contribuinting.md).  
 
 ##### O que é Docker?  
-*"O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado. Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles (veremos isso melhor em posts futuros)."*
+*"O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro se torna portável para qualquer outro Host que contenha o Docker instalado. Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles (veremos isso melhor em posts futuros)."*
   
-Docker é uma plataforma aberta para desenvolvedores e administradores de sistemas, usada para construir, executar e distribuir "máquinas". Nesse artigo vou explicar o que é isso e as suas funcionalidades mais básicas.
+Docker é uma plataforma aberta para desenvolvedores e administradores de sistemas, usada para construir, executar e distribuir "máquinas". 
 
 ##### Qual a diferença?  
 ![alt text](http://www.rightscale.com/blog/sites/default/files/docker-containers-vms.png "Diferença entre uma máquina virtual e um container")
@@ -49,3 +49,24 @@ Para verificar use o comando:
 ```{r, engine='bash', count_lines}
 ps -ef | grep docker
 ```
+
+##### Informações sobre o Docker ps:
+**CONTAINER ID**: Identificação única do container;  
+**IMAGE**: A imagem que o container está utilizando. Exemplo: Ubuntu, Debian etc;  
+**COMMAND**: Qual o comando o container está utilizando;  
+**CREATED**: Há quanto tempo o container foi criado;  
+**STATUS**: Informa se o container está "em pé" ou desligado;  
+**PORTS**: As portas utilizadas pelo container;  
+**NAMES**: Nome do container.
+
+##### Criando container:
+
+Para criarmos um novo container usamos o comando:  
+(•) ANTES DE DAR O COMANDO PARA CRIAÇÃO, FICA AO SEU CRITÉRIO UTILIZAR O COMANDO DOCKER IMAGES, O COMANDO
+DOCKER IMAGES VAI VERIFICAR SE EXISTE ALGUMA IMAGEM JÁ BAIXADA LOCALMENTE.
+
+```{r, engine='bash', count_lines}
+docker run -i -t ubuntu:14.10 /bin/bash/
+# docker run -i -t IMAGE COMMAND
+```
+*Se a imagem não existir localmente*, o Docker irá baixar do hub. Ao terminar o download (se necessário) o container já vai estar criado e já vai estar logado nele, use o comando *cat /etc/issue* para verificar se realmente está no container.
