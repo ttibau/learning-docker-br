@@ -30,7 +30,22 @@ Docker é uma plataforma aberta para desenvolvedores e administradores de sistem
 
 ##### Instalando o Docker:  
 Para instalar, rode o comando no terminal:  
-```{r, engine='bash'}
-curl -sSL https://get.docker.com | sh  
+```{r, engine='bash', count_lines}
+curl -sSL https://get.docker.com | sh
 ```
 
+##### Iniciando o Docker:  
+```{r, engine='bash', count_lines}
+/etc/init.d/docker start
+```
+ou  
+
+```{r, engine='bash', count_lines}
+sudo service docker start
+```
+
+##### Verificando se o Docker foi iniciado:  
+Para verificar use o comando:  
+```{r, engine='bash', count_lines}
+ps -ef | grep docker
+```
