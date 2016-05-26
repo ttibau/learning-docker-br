@@ -63,8 +63,7 @@ O comando **docker ps** é mais utilizado pois traz informações sobre os conta
 * **PORTS**: As portas utilizadas pelo container;  
 * **NAMES**: Nome do container.
 
-##### Criando container:  
-
+##### Criando container  
 Para criarmos um novo container usamos o comando:  
 Antes de dar o comando para a criação, fica ao seu critério utilizar o comando **docker images**, o qual vai verificar se existe alguma imagem já baixada localmente.
 
@@ -76,8 +75,7 @@ docker run -i -t ubuntu:14.10 /bin/bash/
 
 ![alt text](http://i.imgur.com/WjblCPt.png)  
 
-#####Saindo/encerrando o container:
-
+##### Saindo/encerrando o container  
 As palavras podem parecer ter o mesmo sentido, porém não pra docker, veremos:  
 * Para **encerrar** utilize: **CTRL + D**  
 * Para **sair**, utilize o: **CTRL + P + Q**  
@@ -86,3 +84,44 @@ As palavras podem parecer ter o mesmo sentido, porém não pra docker, veremos:
 * Após dar o comando de sair, verifique se o container ainda está ativo:
 
 ![alt text](http://i.imgur.com/ECE556f.png)  
+
+##### Voltando para o container  
+Para voltar para o container, usamos o comando:  
+
+```{r, engine='bash', count_lines}
+docker attach ID
+```
+![alt text](http://i.imgur.com/LlgcfX8.png)  
+
+##### Verificando diferenças  
+
+Podemos verificar se existem alterações desde o momento de criação do container com o comando:
+```{r, engine='bash', count_lines}
+docker diff ID
+```
+
+O comando exibe todos os arquivos criados, deletados ou modificados.  
+
+##### Criando container com portas  
+Para criarmos um container com portas, temos que passar um parâmetro a mais quando for criado o container, o **-p**:
+```{r, engine='bash', count_lines}
+docker run -i -t -p 8080:80 ubuntu:10.14 /bin/bash
+```
+
+No caso acima, passando duas portas, a primeira porta **8080** é a porta do host, ou seja: da máquina host, a porta 80 é a porta usada pelo container, logo, a porta do container vai expor na porta 8080 do host o que deve ser feito pelo container.
+
+##### Salvando imagem customizada 
+Para salvarmos uma imagem customizada para que possamos utilizá-la em outros containers basta usarmos o comando **commit**:
+```{r, engine='bash', count_lines}
+docker commit ID NOME:VERSÃO
+```
+
+É uma boa prática sempre colocar uma versão em seu container.
+
+##### Sobre o Docker exec: executando comandos no container sem estar no container
+Usamos o **docker exec** quando queremos usar um comandoeo container sem precisar entrar nele:
+```{r, engine='bash', count_lines}
+doc exec ID COMMAND
+```
+
+![alt text](http://i.imgur.com/btsxTY8.png http://i.imgur.com/Wv9b6Xh.png)
