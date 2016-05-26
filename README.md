@@ -28,4 +28,9 @@ Docker é uma plataforma aberta para desenvolvedores e administradores de sistem
 **Máquina virtual**: Você roda um novo sistema operacional dentro do sistema operacional que já está sendo executado na máquina física;  
 **Container**: Não é preciso rodar um sistema operacional dentro do sistema operacional da máquina física. Quando utilizado o container, somente o processo que for pedido estará em execução.  
 
+##### Instalando o Docker:  
+Para instalar, rode o comando no terminal:  
+```{r, engine='bash'}
+curl -sSL https://get.docker.com | sh  
+```
 
