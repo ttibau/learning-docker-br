@@ -50,23 +50,39 @@ Para verificar use o comando:
 ps -ef | grep docker
 ```
 
-##### Informações sobre o Docker ps:
-**CONTAINER ID**: Identificação única do container;  
-**IMAGE**: A imagem que o container está utilizando. Exemplo: Ubuntu, Debian etc;  
-**COMMAND**: Qual o comando o container está utilizando;  
-**CREATED**: Há quanto tempo o container foi criado;  
-**STATUS**: Informa se o container está "em pé" ou desligado;  
-**PORTS**: As portas utilizadas pelo container;  
-**NAMES**: Nome do container.
+O comando **docker ps** é mais utilizado pois traz informações sobre os containers que estão rodando no momento.  
 
-##### Criando container:
+![alt text](http://i.imgur.com/8R4xYHi.png)  
+
+##### Informações sobre o Docker ps:
+* **CONTAINER ID**: Identificação única do container;  
+* **IMAGE**: A imagem que o container está utilizando. Exemplo: Ubuntu, Debian etc;  
+* **COMMAND**: Qual o comando o container está utilizando;  
+* **CREATED**: Há quanto tempo o container foi criado;  
+* **STATUS**: Informa se o container está "em pé" ou desligado;  
+* **PORTS**: As portas utilizadas pelo container;  
+* **NAMES**: Nome do container.
+
+##### Criando container:  
 
 Para criarmos um novo container usamos o comando:  
-(•) ANTES DE DAR O COMANDO PARA CRIAÇÃO, FICA AO SEU CRITÉRIO UTILIZAR O COMANDO DOCKER IMAGES, O COMANDO
-DOCKER IMAGES VAI VERIFICAR SE EXISTE ALGUMA IMAGEM JÁ BAIXADA LOCALMENTE.
+Antes de dar o comando para a criação, fica ao seu critério utilizar o comando **docker images**, o qual vai verificar se existe alguma imagem já baixada localmente.
 
 ```{r, engine='bash', count_lines}
 docker run -i -t ubuntu:14.10 /bin/bash/
 # docker run -i -t IMAGE COMMAND
 ```
-*Se a imagem não existir localmente*, o Docker irá baixar do hub. Ao terminar o download (se necessário) o container já vai estar criado e já vai estar logado nele, use o comando *cat /etc/issue* para verificar se realmente está no container.
+**Se a imagem não existir localmente**, o Docker irá baixar do hub. Ao terminar o download (se necessário) o container já vai estar criado e já vai estar logado nele, use o comando **cat /etc/issue** para verificar se realmente está no container.  
+
+![alt text](http://i.imgur.com/WjblCPt.png)  
+
+#####Saindo/encerrando o container:
+
+As palavras podem parecer ter o mesmo sentido, porém não pra docker, veremos:  
+* Para **encerrar** utilize: **CTRL + D**  
+* Para **sair**, utilize o: **CTRL + P + Q**  
+* O encerrar vai matar o container e sair dele.  
+* O *sair* vai deixá-lo executando e não vai exclui-lo.  
+* Após dar o comando de sair, verifique se o container ainda está ativo:
+
+![alt text](http://i.imgur.com/ECE556f.png)  
