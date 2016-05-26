@@ -24,4 +24,8 @@ Docker é uma plataforma aberta para desenvolvedores e administradores de sistem
 ##### Qual a diferença?  
 ![alt text](http://www.rightscale.com/blog/sites/default/files/docker-containers-vms.png "Diferença entre uma máquina virtual e um container")
 
+**Máquina física**: Você instala o seu sistema operacional e utiliza normalmente;  
+**Máquina virtual**: Você roda um novo sistema operacional dentro do sistema operacional que já está sendo executado na máquina física;  
+**Container**: Não é preciso rodar um sistema operacional dentro do sistema operacional da máquina física. Quando utilizado o container, somente o processo que for pedido estará em execução.  
+
 
