@@ -1,5 +1,5 @@
 # learn-docker-br
-Repositório para compartilhamento de aprendizado de docker
+Repositório para compartilhamento de aprendizado de docker, a idéia é ser um repositório mais de consulta e pouco conteúdo didático, passando apenas o necessário para um aprendizado rápido de docker.
 
 ## Capítulos  
 
@@ -115,3 +115,17 @@ doc exec ID COMMAND
 ```
 
 ![alt text](http://i.imgur.com/btsxTY8.png http://i.imgur.com/Wv9b6Xh.png)
+
+### Docker inspec, todas as informações de um container  
+O comando docker inspec dá uma lista de todas as informações de um container, incluindo, MAC Address, IP, quando foi criado, todas as informações que possam ser necessárias:
+```{r, engine='bash', count_lines}
+docker inspect ID
+```
+![alt text](http://i.imgur.com/Wv9b6Xh.png)
+
+### Docker stats, consumo de cpu, mem e rede 
+O docker stats mostra ao usuário todo o tipo de informação de memória, CPU e rede. **Esse é um comando muito importante para análises do container**.
+```{r, engine='bash', count_lines}
+docker stats ID
+```
+
