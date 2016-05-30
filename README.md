@@ -129,3 +129,17 @@ O docker stats mostra ao usuário todo o tipo de informação de memória, CPU e
 docker stats ID
 ```
 
+### Docker rm, removendo de vez o container de sua máquina
+O ** CTRL + D ** mata o container, porém ele não apaga o container, sendo assim, você pode subir o container novmente com o comando docker start ID, para apagarmos de vez o container usamos o comando rm:
+```{r, engine='bash', count_lines}
+docker rm -f ID
+# -f = Force para o caso de o container esteja em execução
+```
+
+### Apagando imagens salvas na máquina:
+Usando o comando **docker images** nós temos a lista de todas as imagens salvas  em nossa máquina, para podermos apagar uma imagem dessa máquina, basta usar o comando docker rmi
+```{r, engine='bash', count_lines}
+docker rmi -f ID
+# -f = Force para o caso tenha algum container em execução com esta imagem
+```
+
