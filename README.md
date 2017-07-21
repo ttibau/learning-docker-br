@@ -4,7 +4,7 @@ Repositório para compartilhamento de aprendizado de docker, a idéia é ser um 
 ## Capítulos  
 
 ### Bem vindo  
-Seja bem vindo ao repositório, a intenção é o compartilhamento de conteúdo do básico ao avançado de Docker, fique a vontade para contribuir para o repositório na seção de [Contribuição](link_de_contribuinting.md).  
+Seja bem vindo ao repositório, a intenção é o compartilhamento de conteúdo do básico ao avançado de Docker, Ocasionalmente surgirão alguns comandos de console para Linux Ubuntu 14.
 
 ### O que é Docker?  
 *"O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro se torna portável para qualquer outro Host que contenha o Docker instalado. Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles (veremos isso melhor em posts futuros)."*
@@ -37,10 +37,10 @@ sudo service docker start
 ### Verificando se o Docker foi iniciado:  
 Para verificar use o comando:  
 ```{r, engine='bash', count_lines}
-ps -ef | grep docker
+sudo service docker status
 ```
 
-O comando **docker ps** é mais utilizado pois traz informações sobre os containers que estão rodando no momento.  
+O comando **docker ps** é também utilizado pois traz informações sobre os containers que estão rodando no momento.  
 
 ![alt text](http://i.imgur.com/8R4xYHi.png)  
 
